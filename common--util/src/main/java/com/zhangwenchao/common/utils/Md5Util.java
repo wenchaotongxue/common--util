@@ -12,6 +12,15 @@ import java.security.MessageDigest;
  * 
  */
 public class Md5Util {
+	/**
+	 * 
+	* @Title: string2MD5
+	* @Description: Md5生成32位md5码
+	* @param @param inStr
+	* @param @return    参数
+	* @return String    返回类型
+	* @throws
+	 */
 
 	public static String string2MD5(String inStr) {
 		MessageDigest md5 = null;
