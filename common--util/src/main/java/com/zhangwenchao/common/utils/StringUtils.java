@@ -22,16 +22,16 @@ public class StringUtils {
 	
 	  if(str==null) {
 		  
-		  return false;
+		  return true;
 	  }
 	  //去除空格
 	  str = str.trim();
 	  
 	  if(str.length()==0) {
-		  return false;
+		  return true;
 	  }
 	  
-	  return true;
+	  return false;
   }	
 	
 	/**
