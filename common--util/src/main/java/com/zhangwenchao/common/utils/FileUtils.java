@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 /**
  * 
  * @author 作者 Your-Name: zhangwenchao
@@ -95,16 +93,14 @@ public class FileUtils {
 	 */
 
 	public static List<String> readTextFileOflist(String pathname) {
-		BufferedReader bf = null;
-		List<String> strList = new ArrayList<>();
-
+		BufferedReader br=null;
+		List<String> strList=new ArrayList<String>();
+		String str=null;
 		try {
-			bf = new BufferedReader(new FileReader(new File(pathname)));
-			do {
-				strList.add(bf.readLine());
-
-			} while (bf.read() != -1);
-
+			br=new BufferedReader(new FileReader(new File(pathname)));
+			while((str=br.readLine())!=null) {
+				strList.add(str);
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -113,9 +109,10 @@ public class FileUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
+		}finally{
+			StreamUtils.closeAll(br);
 		}
 		return strList;
-
 	}
 
 	/**
