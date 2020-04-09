@@ -1,9 +1,7 @@
 package com.zhangwenchao.common.utils;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -233,6 +231,47 @@ public class DateUtils {
 
 	}
 
+	 /*
+	* 则返回的结果为2019-05-01 00:00:00
+	*/
+	public static Date getDateByInitMonth(Date  date){
+		
+	//TODO 实现代码
+		 Calendar c = Calendar.getInstance(); 
+		 
+		  c.set(Calendar.DAY_OF_MONTH, 0);
+		  c.set(Calendar.HOUR_OF_DAY, 0);	
+		  c.set(Calendar.MINUTE, 0);
+		  c.set(Calendar.SECOND, 0);
+		 
+		
+		
+		
+		return c.getTime();
+	}
+	/*
+	* 方法2：(10分)
+	* 给任意一个时间对象，返回该时间所在月的最后日23时59分59秒，需要考虑月大月小和二月特殊情况。
+	* 例如一个Date对象的值是2019-05-18 11:37:22，则返回的时间为2019-05-31 23:59:59
+	* 例如一个Date对象的值是2019-02-05 15:42:18，则返回的时间为2019-02-28 23:59:59
+	*/
+	public static Date getDateByFullMonth(Date src){
+		
+	//TODO 实现代码
+		
+		
+		
+		return src;
+	}
+
+	
+	  
+	
+	
+	
+	
+	
+	
 	/**
 	 * 测试
 	 * 
@@ -240,8 +279,10 @@ public class DateUtils {
 	 */
 
 	public static void main(String[] args) throws ParseException {
-		Date date1 = dateTimeFormat.parse("2019-12-05 13:34:33");
-		String format = dateTimeFormat.format(getlastDateMonth(date1));
+		Date date1 = dateTimeFormat.parse("2019-05-18 11:37:22");
+		Date date = getlastDateMonth(getlastDateMonth(date1));
+		String format = dateTimeFormat.format(date);
+		
 		System.out.println(format);
 
 	}

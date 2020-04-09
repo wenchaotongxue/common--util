@@ -132,7 +132,7 @@ public class StreamUtils {
 	     */
 	    
 	     public static void main(String[] args) {
-			System.out.println(getFileContent("C:\\Users\\张文超\\Desktop\\web.xml"));
+			System.out.println(readTextFile( new File("D:\\资料\\实习报告总结.txt")));
 		}
 	    
 }

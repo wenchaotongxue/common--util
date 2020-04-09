@@ -165,11 +165,18 @@ public class FileUtils {
 
 	public static void main(String[] args) {
 
-		// System.out.println(getExName("ass.txt"));
+		/*// System.out.println(getExName("ass.txt"));
 		String property = System.getenv("MAVEN_HOME");
 		// String getenv = System.getenv("JAVA_HOME");
 		// System.out.println(property);
-		System.out.println(getSystemTempDirectory());
+		System.out.println(getSystemTempDirectory());*/
+		
+		
+		String exName = getExName("aaa.jsp");
+		
+		
+		System.out.println(exName);
+		
 
 	}
 
